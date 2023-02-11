@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table id="services-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Vehicle</th>
+      <th>Date</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for service in services %}
+      <tr>
+        <td>{{ service.id }}</td>
+        <td>{{ service.vehicle.make }} {{ service.vehicle.model }} ({{ service.vehicle.year }})</td>
+        <td>{{ service.date }}</td>
+        <td>{{ service.description }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</body>
+</html>

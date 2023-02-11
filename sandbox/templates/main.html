@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<h1>should work</h1>
+<button id="view-1-btn">View 1</button>
+<button id="view-2-btn">View 2</button>
+<button id="view-3-btn">View 3</button>
+<div id="result"></div>
+<script>
+$(document).ready(function() {
+  $("#view-1-btn").click(function() {
+    $.get("{% url 'view_1' %}", function(data) {
+      $("#result").html(data);
+    });
+  });
+
+  $("#view-2-btn").click(function() {
+    $.get("{% url 'view_2' %}", function(data) {
+      $("#result").html(data);
+    });
+  });
+
+  $("#view-3-btn").click(function() {
+    $.get("{% url 'view_3' %}", function(data) {
+      $("#result").html(data);
+    });
+  });
+
+  // Load data for the first table (Vehicle) by default
+  $("#view-1-btn").click();
+});
+</script>
+</body>
+</html>

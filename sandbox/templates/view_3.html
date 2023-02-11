@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table id="reclamations-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Vehicle</th>
+      <th>Date</th>
+      <th>Problem</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for reclamation in reclamations %}
+      <tr>
+        <td>{{ reclamation.id }}</td>
+        <td>{{ reclamation.vehicle.make }} {{ reclamation.vehicle.model }} ({{ reclamation.vehicle.year }})</td>
+        <td>{{ reclamation.date }}</td>
+        <td>{{ reclamation.problem }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</body>
+</html>
